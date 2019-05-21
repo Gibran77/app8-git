@@ -5,7 +5,7 @@ $(document).ready(function(e) {
 	
 });
 
-function onDeviceReady(){
+    function onDeviceReady(){
 	
 	$('#posicion').on('click',function(){
 		getPosition ();
@@ -22,11 +22,11 @@ function getPosition(){
 	
 	function onSuccess(position){
 		
-		alert('Latitud:' + position.coords.latitude +'\n'+
-		'Longitud:' + position.coords.longitude +'\n');
+		alert('Latitude:' + position.coords.latitude +'\n'+
+		'Longitude:' + position.coords.longitude +'\n');
 	};
 	
 	function onError(error){
-		alert('code:' + error.code + '\n' + 'messages:' + error.messages + '\n');
+		alert('code:' + error.code +'\n' + 'message:' + error.message + '\n');
 	}
 }
