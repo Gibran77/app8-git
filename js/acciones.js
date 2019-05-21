@@ -1,11 +1,11 @@
-//JavaScript
+//JavaScript Document
 
-$(document).ready(function(e) {
-    document.addEventListener("deviceready",onDeviceReady,false);
-	
+$(document).ready(function(e){
+document.addEventListener("deviceready",onDeviceReady,false); 
+		
 });
 
-    function onDeviceReady(){
+function onDeviceReady(){
 	
 	$('#posicion').on('click',function(){
 		getPosition ();
@@ -13,20 +13,19 @@ $(document).ready(function(e) {
 }
 
 function getPosition(){
-	var options = {
-		enableHighAccuracy : true,
-		maximumAge:3600000
+	var options={ 
+	enableHighAccuracy :true, 
+	maximumAge: 3600000
 	}
 	
-	var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+	var watchID= navigator.geolocation.getCurrentPosition(onSuccess,onError, options); 
 	
 	function onSuccess(position){
 		
-		alert('Latitude:' + position.coords.latitude +'\n'+
-		'Longitude:' + position.coords.longitude +'\n');
-	};
-	
+	alert('Latitude:'      +position.coords.latitude  +'\n'+ 
+		  'Longitude:'    +position.coords.longitude  +'\n'); 
+	}; 
 	function onError(error){
-		alert('code:' + error.code +'\n' + 'message:' + error.message + '\n');
+		alert('code:'   +error.code  +'\n'+ 'message:' +error.message+'\n');
 	}
 }
