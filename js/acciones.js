@@ -1,32 +1,32 @@
 //JavaScript
 
-$(document).ready(function(e){
-	document.addEventListener("deviceready", onDeviceReady, false);
+$(document).ready(function(e) {
+    document.addEventListener("deviceready",onDeviceReady,false);
 	
 });
 
 function onDeviceReady(){
 	
 	$('#posicion').on('click',function(){
-		getPosition();
+		getPosition ();
 	});
 }
 
 function getPosition(){
-	var options={
+	var options = {
 		enableHighAccuracy : true,
 		maximumAge:3600000
 	}
 	
-	var watchID=navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+	var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 	
 	function onSuccess(position){
 		
-		alert('Latitud:'   +position.coords.latitude    + '\n'+
-		'Longitud:'     +position.coords.longitude    +'\n');
+		alert('Latitud:' + position.coords.latitude +'\n'+
+		'Longitud:' + position.coords.longitude +'\n');
 	};
 	
 	function onError(error){
-		alert('Code:'    +error.code  +'\n' + 'message:'  + error.message + '\n');
+		alert('code:' + error.code + '\n' + 'messages:' + error.messages + '\n');
 	}
 }
